@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block is_signup_active %}
+active
+{% endblock %}
+
+{% block main %}
+<div class="w-full flex justify-center items-center mt-8">
+    <div class="bg-blue-200 p-4 rounded">
+        <form action="/signup" method="POST">
+            {{ form.csrf_token() }}
+            <div class="flex flex-col text-left mb-6">
+                <h2 class="mb-2">
+                    {{ form.username.label }}
+                </h2>
+                {{ form.username(class_='pl-2 rounded') }}
+            </div>
+            <div class="flex flex-col text-left mb-6">
+                <h2 class="mb-2">
+                    {{ form.email.label }}
+                </h2>
+                {{ form.email(class_='pl-2 rounded') }}
+            </div>
+            <div class="flex flex-col text-left mb-6">
+                <h2 class="mb-2">
+                    {{ form.password.label }}
+                </h2>
+                {{ form.password(class_='pl-2 rounded') }}
+            </div>
+            <div class="flex justify-center items-center">
+                {{ form.submit(class_='rounded border-black text-white bg-black py-1 px-2 cursor-pointer ease-in-out
+                transition
+                hover:bg-gray-400') }}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

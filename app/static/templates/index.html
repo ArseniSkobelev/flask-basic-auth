@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block is_home_active %}
+active
+{% endblock %}
+
+{% block main %}
+<div>
+    <div class="flex justify-center pt-8 w-full">
+        <ul class="flex gap-2 flex-col">
+            {% for user in users %}
+            <div class="flex gap-4 flex-row bg-blue-200 rounded py-2 mx-12 px-4">
+                <div class="text-2xl bg-white rounded p-2">
+                    👦
+                </div>
+                <div class="flex items-center text-left">
+                    {{ user.username }}
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div>
+    <div class="flex justify-center h-100vh items-center p-8 w-full bg-blue-200">
+        <div class="flex flex-col justify-center gap-2">
+            <h1>Profile of user: {{ user.username }}</h1>
+            <div class="flex flex-col gap-2">
+                <h2>Username:</h2>
+                <p>{{ user.username }}</p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h2>Email:</h2>
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login / Signup</title>
+</head>
+<body>
+<div class="py-4">
+    <nav class="flex justify-center items-center gap-12">
+        {% if token %}
+        <a href="/" class="{% block is_home_active2 %}{% endblock %}">Home</a>
+        <a href="/user">Profile</a>
+        <div class="flex justify-end items-center">
+            <a href="/logout">Logout</a>
+        </div>
+        {% else %}
+        <a href="/" class="{% block is_home_active %}{% endblock %}">Home</a>
+        <a href="/login" class="{% block is_login_active %}{% endblock %}">Login</a>
+        <a href="/signup" class="{% block is_signup_active %}{% endblock %}">Signup</a>
+        {% endif %}
+    </nav>
+</div>
+<hr>
+{% block main %}
+{% endblock %}
+</body>
+</html>
